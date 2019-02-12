@@ -17,6 +17,16 @@ function Ball(){
     this.velocity = this.lift;
   }
 
+  this.reset = function() {
+    this.x = width/2;
+    this.y = 50;
+    this. velocity = 0;
+    this.gravity = 0.5;
+    this.lift = -15;
+    this.velocityx = 0;
+    platform.count = 0;
+  }
+
   this.bounce = function() {
     if(this.x < platform.x+50){
       this.velocityx += -(this.x - platform.x + 50)*0.005

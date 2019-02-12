@@ -6,9 +6,7 @@ function setup() {
 }
 
 function draw() {
-  background(220);
-
-  this.count = 0;
+  background(200);
 
   ball.show();
   ball.update();
@@ -16,10 +14,24 @@ function draw() {
   platform.show();
   platform.update();
 
+
+
   if (platform.hits(ball)){
     ball.up();
     platform.count += 1;
+    if (platform.record < platform.count){
+      platform.record = platform.count;
+    }
     print("hit");
     ball.bounce();
+  }
+
+  if (ball.y == height) {
+    textSize(100);
+    text('GAME OVER',200,200);
+    
+    if (keyIsPressed){
+      ball.reset();
+    }
   }
 }
