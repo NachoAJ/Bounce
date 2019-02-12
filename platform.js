@@ -12,7 +12,7 @@ function Platform() {
   this.update = function() {
     textSize(32);
     text('Puntos: '+this.count,20,50);
-    text('Récord: '+this.record,20,80);
+    text('Record: '+this.record,20,80);
     this.x = mouseX-50;
   //  this.y = mouseY;
   }

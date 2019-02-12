@@ -16,7 +16,7 @@ function draw() {
 
   var i;
 
-  for( i = 0; i <= 1000; i+=10){
+  for( i = 0; i <= width; i+=10){
     fill(0);
     triangle(i,height,i+5,height-15,i+10,height);
 
@@ -25,7 +25,7 @@ function draw() {
   if(ball.gravity == 0){
     textSize(35);
     fill(255,0,0);
-    text('Haz click para empezar',300,200);
+    text('Haz click para empezar',(width/2)-200,height/2);
     if (mouseIsPressed){
           ball.start();
     }
@@ -45,9 +45,9 @@ function draw() {
   if (ball.y == height) {
     fill(255,0,0);
     textSize(100);
-    text('GAME OVER',200,200);
+    text('GAME OVER',(width/2)-300,height/2);
     textSize(25);
-    text('Haz click para reiniciar',365,250);
+    text('Haz click para reiniciar',(width/2)-135,(height/2)+50);
     if (mouseIsPressed){
       ball.reset();
     }
