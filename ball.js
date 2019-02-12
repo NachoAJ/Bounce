@@ -3,7 +3,7 @@ function Ball(){
   this.x = width/2;
   this.y = 50;
   this. velocity = 0;
-  this.gravity = 0.5;
+  this.gravity = 0;
   this.lift = -15;
   this.velocityx = 0;
 
@@ -15,6 +15,10 @@ function Ball(){
 
   this.up = function() {
     this.velocity = this.lift;
+  }
+
+  this.start = function(){
+    this.gravity = 0.5;
   }
 
   this.reset = function() {
@@ -29,13 +33,13 @@ function Ball(){
 
   this.bounce = function() {
     if(this.x < platform.x+50){
-      this.velocityx += -(this.x - platform.x + 50)*0.005
+      this.velocityx += -(this.x - platform.x + 50)*0.02;
       if(this.velocityx > 0){
         this.velocityx *= -1;
       }
     }
     if(this.x > platform.x+50){
-      this.velocityx += (this.x - platform.x + 50)*0.005
+      this.velocityx += (this.x - platform.x + 50)*0.02;
       if(this.velocityx < 0){
         this.velocityx *= -1;
       }
