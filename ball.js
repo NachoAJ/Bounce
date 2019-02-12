@@ -38,7 +38,7 @@ function Ball(){
         this.velocityx *= -1;
       }
     }
-    if(this.x > platform.x+50){
+    if(this.x >= platform.x+50){
       this.velocityx += (this.x - platform.x + 50)*0.02;
       if(this.velocityx < 0){
         this.velocityx *= -1;
